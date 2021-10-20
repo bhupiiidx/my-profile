@@ -1,0 +1,6 @@
+FROM nginx
+RUN apt install git -y
+WORKDIR /var/www/html
+RUN git clone https://gitlab.com/as_abhi6776/my-profile.git
+COPY my-profile.conf /etc/nginx/sites-enabled/.
+ENTRYPOINT ["sh /root/script.sh"]
